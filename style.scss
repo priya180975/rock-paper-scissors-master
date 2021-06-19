@@ -1,7 +1,10 @@
-$Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
-$Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
-$Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
-$Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+$Scissors-Gradient1: hsl(39, 89%, 49%);
+$Scissors-Gradient2:hsl(40, 84%, 53%);
+$Paper-Gradient1: hsl(230, 89%, 62%);
+$Paper-Gradient2: hsl(230, 89%, 65%);
+$Rock-Gradient1: hsl(349, 71%, 52%);
+$Rock-Gradient2: hsl(349, 70%, 56%);
+//$Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
 $Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
 $Dark-Text: hsl(229, 25%, 31%);
 $Score-Text: hsl(229, 64%, 46%);
@@ -30,6 +33,7 @@ body{
     border-radius: 1rem;
     padding: 1.2rem;
     justify-content: space-between;
+    margin-bottom: 3rem;
 
     #score{
         background-color: #fff;
@@ -46,7 +50,6 @@ body{
 }
 
 #center-rules-display{
-    // position: absolute
     margin: 0 auto;
     z-index: 1;
     width: fit-content;
@@ -66,7 +69,6 @@ body{
     
             #close{
                 align-self: center;
-                // border:  1px solid black;
                 background: none;
                 border: none;
                 cursor: pointer;
@@ -77,9 +79,57 @@ body{
             padding: 2rem 4rem;
         }
     }
-
-   
 }
+
+#center-selection{
+    background-image: url("images/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-size: 18em;
+    background-position-x: 148px;
+    background-position-y: 70px;
+    display: grid;
+    width: 40%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .border{
+        width:fit-content;
+        height: fit-content;
+        border-radius: 50%;
+        padding:1.5rem;
+        
+        .selection{
+            width: fit-content;
+            border-radius: 50%;
+            background: #fff;
+            padding:3rem;
+           
+            button{
+                background: none;
+                border:none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #rock-div{
+        grid-row:2;
+        grid-column:2;
+        background:$Rock-Gradient2;
+    }
+
+    #scissors-div{
+        grid-column: 3;
+        background:$Scissors-Gradient1;
+    }
+
+    #paper-div{
+        background:$Paper-Gradient1;
+    }
+
+}
+
 
 #footer{
     border:1px solid $Header-Outline;
