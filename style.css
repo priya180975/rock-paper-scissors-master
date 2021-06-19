@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
 * {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
@@ -32,5 +36,66 @@ body {
 
 #head #score #score-no {
   font-size: 3.4rem;
+}
+
+#center-rules-display {
+  margin: 0 auto;
+  z-index: 1;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#center-rules-display .rulespage {
+  display: none;
+  background: #fff;
+  padding: 1.5rem 1.5rem;
+  border-radius: 1rem;
+}
+
+#center-rules-display .rulespage #display-rules-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #141539;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#center-rules-display .rulespage #display-rules-head #close {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#center-rules-display .rulespage #rules-img {
+  padding: 2rem 4rem;
+}
+
+#footer {
+  border: 1px solid #606e85;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 10px;
+  border-radius: 0.4rem;
+}
+
+#footer #rules {
+  padding: 0.5rem 2rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+#footer #rules:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
