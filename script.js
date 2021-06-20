@@ -65,3 +65,20 @@ function houseSelects(){
     return [house,rand];
 }
 
+function winner(human,computer){
+    console.log(human,computer)
+    let result=(human==computer?"TIE":(human==1 && computer==3)||(human==2 && computer==1)||(human==3 && computer==2)?"YOU LOSE":"YOU WIN")
+    return winnertemp(result)
+}
+
+function winnertemp(text)
+{
+    let div= 
+    `<div> 
+        <div>${text}</div>
+        <div>
+            <button>PLAY AGAIN</button>
+        </div>
+    </div>`
+    return div
+}
