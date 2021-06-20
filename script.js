@@ -1,8 +1,10 @@
 let rules=document.querySelector("#rules");
 let close=document.querySelector("#close");
 let displayRules=document.querySelector(".rulespage");
-let selections=document.querySelectorAll(".select")
-
+let selections=document.querySelectorAll(".select");
+let centerSelection=document.querySelector("#center-selection");
+let afterSelection=document.getElementById("after-selection")
+let scored=document.querySelector("#score-no")
 
 close.addEventListener("click",rulesClose);
 rules.addEventListener("click",displayR);
@@ -18,30 +20,31 @@ function rulesClose(){
 
 function selectedOption(e){
     let selectedElement=e.target;
-    let centerSelection=document.querySelector("#center-selection");
-    let afterSelection=document.getElementById("after-selection")
     let dataNo=selectedElement.getAttribute("data-no")
-    console.log(dataNo)
-    
+   
     let selectedDiv=makeDiv(dataNo);
     document.querySelector("#human").innerHTML=selectedDiv;
 
     centerSelection.style.display="none"
     afterSelection.style.display="grid";
-    centerSelection.setAttribute("id","after-selection")
 
     let computer=document.querySelector("#computer");
 
-    let a=houseSelects()
-    console.log(a[0],a[1])
-    // setTimeout(function(){
-    // computer.innerHTML=a[0]
-    // computer.setAttribute("id","");},1000)
+    // let a=houseSelects()
+    let rand=Math.floor((Math.random()*3)+1);
+    let house=makeDiv(rand);
 
-    computer.innerHTML=a[0]
-    computer.setAttribute("id","");
+    computer.innerHTML=house;
+    computer.classList.remove("temporary")
 
-    console.log(winner(dataNo,a[1]))
+    //winner(dataNo,rand)
+    let newdiv=document.createElement("div");
+    afterSelection.appendChild(newdiv);
+    newdiv.classList.add("winner");
+    newdiv.innerHTML=winner(dataNo,rand);
+
+    let playAgain=document.querySelector("#play-again");
+    playAgain.addEventListener("click",again)
 }
 
 function makeDiv(dataNo)
@@ -59,26 +62,35 @@ function makeDiv(dataNo)
 }
 
 
-function houseSelects(){
-    let rand=Math.floor((Math.random()*3)+1);
-    let house=makeDiv(rand);
-    return [house,rand];
-}
-
 function winner(human,computer){
-    console.log(human,computer)
     let result=(human==computer?"TIE":(human==1 && computer==3)||(human==2 && computer==1)||(human==3 && computer==2)?"YOU LOSE":"YOU WIN")
+    let scr=(result=="TIE")?0:(result=="YOU LOSE")?-1:1
+    score(scr)
     return winnertemp(result)
 }
 
 function winnertemp(text)
 {
     let div= 
-    `<div> 
-        <div>${text}</div>
+    `
+        <div id="text">${text}</div>
         <div>
-            <button>PLAY AGAIN</button>
+            <button id="play-again">PLAY AGAIN</button>
         </div>
-    </div>`
+    `
     return div
+}
+
+function again()
+{
+    document.querySelector(".winner").remove();
+    centerSelection.style.display="grid";
+    afterSelection.style.display="none";
+}
+
+function score(scr)
+{
+    console.log(scr)
+    let s=parseInt(scored.innerText)+scr;
+    scored.innerText=s
 }

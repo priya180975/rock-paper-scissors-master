@@ -5,7 +5,7 @@ $Paper-Gradient2: hsl(230, 89%, 65%);
 $Rock-Gradient1: hsl(349, 71%, 52%);
 $Rock-Gradient2: hsl(349, 70%, 56%);
 //$Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
-$Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+//$Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
 $Dark-Text: hsl(229, 25%, 31%);
 $Score-Text: hsl(229, 64%, 46%);
 $Header-Outline: hsl(217, 16%, 45%);
@@ -24,10 +24,9 @@ $back:hsl(237, 49%, 15%);
 
 body{
     //background-image: repeating-radial-gradient(yellow 10%,pink);
+    background:radial-gradient(circle at top,$Radial-Gradient1,$Radial-Gradient2,black);
+    height: 100vh;
     
-    #container{
-        background:radial-gradient(circle at top,$Radial-Gradient1,$Radial-Gradient2,black);
-    }
 }
 
 #head{
@@ -46,7 +45,7 @@ body{
         border-radius: 0.6rem;
         font-size: 1.3rem;
         text-align: center;
-        color:$Header-Outline;  
+        color:$Score-Text;
 
         #score-no{
             font-size: 3.4rem;
@@ -55,7 +54,7 @@ body{
 }
 
 #center-rules-display{
-    margin: 9% 33%;
+    margin: 9% 34%;
     z-index: 1;
     width: fit-content;
     position: absolute;
@@ -107,9 +106,9 @@ body{
 #after-selection{
     display: none;
     // display: grid;
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
-    grid-template-columns:1fr 200px 1fr;
+    grid-template-columns:1fr 400px 1fr;
 
     button{
         cursor:not-allowed;
@@ -131,7 +130,7 @@ body{
         grid-column:3;
     }
 
-    #computer{
+    .temporary{
         padding: 90px;
         border-radius: 50%;
         opacity: 0.4;
@@ -183,11 +182,36 @@ body{
         box-shadow: 2px 6px  $Paper-Gradient2
     }
 
+.winner{
+    grid-row:1;
+    grid-column: 2;
+    text-align: center;
+    align-self: center;
+    padding: 10px;
 
+    #text{
+        font-size: 3rem;
+        color: white;
+    }
+
+    #play-again{
+        cursor: pointer;
+        background: white;
+        padding: 13px 3rem;
+        margin: 10px;
+        border:none;
+        border-radius: 10px;
+        columns: $Dark-Text;
+    }
+
+
+}
 
 
 #footer{
-    // border:1px solid yellow;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     // width:fit-content;
     text-align: right;
     padding-bottom: 1px;
