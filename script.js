@@ -64,20 +64,51 @@ function makeDiv(dataNo)
 
 function winner(human,computer){
     let result=(human==computer?"TIE":(human==1 && computer==3)||(human==2 && computer==1)||(human==3 && computer==2)?"YOU LOSE":"YOU WIN")
-    let scr=(result=="TIE")?0:(result=="YOU LOSE")?-1:1
-    score(scr)
+
     return winnertemp(result)
 }
 
 function winnertemp(text)
 {
-    let div= 
-    `
-        <div id="text">${text}</div>
-        <div>
-            <button id="play-again">PLAY AGAIN</button>
+    let scr=(text=="TIE")?0:(text=="YOU LOSE")?-1:1
+    score(scr)
+  
+
+    if(scr=="1")
+    {
+        console.log("hello")
+        let human=document.querySelector("#human");
+        let hum=human.innerHTML;
+        // human.classList.add("circle");
+        human.innerHTML=  
+        `<div class="circle circle-left">
+           
         </div>
-    `
+        ${hum}`
+        console.log(human.innerHTML)
+    }
+
+    if(scr==-1)
+    {
+        let computer=document.querySelector("#computer");
+        let comp=computer.innerHTML;
+        // computer.classList.add("circle");
+        computer.innerHTML=  
+        `<div class="circle circle-right">
+           
+        </div>
+        ${comp}`
+        console.log(comp.innerHTML)
+    }
+
+    let div= 
+    `<div id="text">${text}</div>
+    <div>
+        <button id="play-again">PLAY AGAIN</button>
+    </div>`;
+
+
+
     return div
 }
 

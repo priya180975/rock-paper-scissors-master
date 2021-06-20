@@ -172,22 +172,22 @@ body {
   -ms-grid-column: 2;
   grid-column: 2;
   background: #dd405d;
-  -webkit-box-shadow: 2px 6px #dc2e4e;
-          box-shadow: 2px 6px #dc2e4e;
+  -webkit-box-shadow: 2px -10px inset #dc2e4e;
+          box-shadow: 2px -10px inset #dc2e4e;
 }
 
 #scissors-div {
   -ms-grid-column: 3;
   grid-column: 3;
   background: #ec9e0e;
-  -webkit-box-shadow: 2px 6px #eca922;
-          box-shadow: 2px 6px #eca922;
+  -webkit-box-shadow: 2px -10px inset #eca922;
+          box-shadow: 2px -10px inset #eca922;
 }
 
 #paper-div {
   background: #4865f4;
-  -webkit-box-shadow: 2px 6px #5671f5;
-          box-shadow: 2px 6px #5671f5;
+  -webkit-box-shadow: 2px -10px inset #5671f5;
+          box-shadow: 2px -10px inset #5671f5;
 }
 
 .winner {
@@ -216,6 +216,25 @@ body {
   border-radius: 10px;
   -webkit-columns: #3b4363;
           columns: #3b4363;
+}
+
+.circle {
+  border-radius: 50%;
+  background-image: repeating-radial-gradient(circle at 250px, #2b2b3628, rgba(48, 48, 78, 0.733) 50px);
+  z-index: -1;
+  position: absolute;
+  top: 120px;
+  background-size: 760px;
+  height: 500px;
+  width: 500px;
+}
+
+.circle-right {
+  right: 136px;
+}
+
+.circle-left {
+  left: 120px;
 }
 
 #footer {
