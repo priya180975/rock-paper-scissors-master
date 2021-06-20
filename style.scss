@@ -9,7 +9,8 @@ $Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
 $Dark-Text: hsl(229, 25%, 31%);
 $Score-Text: hsl(229, 64%, 46%);
 $Header-Outline: hsl(217, 16%, 45%);
-$Radial-Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+$Radial-Gradient1: hsl(214, 47%, 23%) ;
+$Radial-Gradient2: hsl(237, 49%, 15%);
 $back:hsl(237, 49%, 15%);
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap');
@@ -22,7 +23,11 @@ $back:hsl(237, 49%, 15%);
 }
 
 body{
-    background-color: $back;
+    //background-image: repeating-radial-gradient(yellow 10%,pink);
+    
+    #container{
+        background:radial-gradient(circle at top,$Radial-Gradient1,$Radial-Gradient2,black);
+    }
 }
 
 #head{
@@ -50,15 +55,21 @@ body{
 }
 
 #center-rules-display{
-    margin: 0 auto;
+    margin: 9% 33%;
     z-index: 1;
     width: fit-content;
+    position: absolute;
+    top: 10px;
+    // border: 11px solid white;
+   
 
     .rulespage{
-        display: none;
-        background: #fff;
-        padding: 1.5rem 1.5rem;
+        display:none ;
+        box-shadow: 1px 1px 10px black;
         border-radius: 1rem;
+        background: #fff;
+        padding: 1rem 1rem;
+        
 
         #display-rules-head{
             display: flex;
@@ -91,7 +102,42 @@ body{
     width: 40%;
     margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+}
+
+#after-selection{
+    display: none;
+    // display: grid;
+    width: 40%;
+    margin: 0 auto;
+    grid-template-columns:1fr 200px 1fr;
+
+    button{
+        cursor:not-allowed;
+        
+        img{
+            cursor: not-allowed;
+        }
+    }
+
+    p{
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 23px;
+
+    }
+
+    #the-house-picked{
+        grid-column:3;
+    }
+
+    #computer{
+        padding: 90px;
+        border-radius: 50%;
+        opacity: 0.4;
+        background:rgba(23, 23, 51, 0.842)
+    }
+}
 
     .border{
         width:fit-content;
@@ -104,11 +150,17 @@ body{
             border-radius: 50%;
             background: #fff;
             padding:3rem;
+            box-shadow:2px 7px inset rgb(194, 194, 194);
            
             button{
                 background: none;
                 border:none;
                 cursor: pointer;
+
+                img{
+                    position: relative;
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -117,31 +169,35 @@ body{
         grid-row:2;
         grid-column:2;
         background:$Rock-Gradient2;
+        box-shadow: 2px 6px  $Rock-Gradient1;
     }
 
     #scissors-div{
         grid-column: 3;
         background:$Scissors-Gradient1;
+        box-shadow: 2px 6px  $Scissors-Gradient2
     }
 
     #paper-div{
         background:$Paper-Gradient1;
+        box-shadow: 2px 6px  $Paper-Gradient2
     }
 
-}
+
 
 
 #footer{
-    border:1px solid $Header-Outline;
-    width:fit-content;
-    position: absolute;
-    right: 10px;
-    border-radius: 0.4rem;
+    // border:1px solid yellow;
+    // width:fit-content;
+    text-align: right;
+    padding-bottom: 1px;
+    
 
     #rules{
         padding: 0.5rem 2rem;
+        border-radius: 0.4rem;
+        border:1px solid $Header-Outline;
         background: none;
-        border:none;
         color:white;    
     }
 

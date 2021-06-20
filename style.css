@@ -7,8 +7,8 @@
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-body {
-  background-color: #141539;
+body #container {
+  background: radial-gradient(circle at top, #1f3756, #141539, black);
 }
 
 #head {
@@ -40,18 +40,22 @@ body {
 }
 
 #center-rules-display {
-  margin: 0 auto;
+  margin: 9% 33%;
   z-index: 1;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: absolute;
+  top: 10px;
 }
 
 #center-rules-display .rulespage {
   display: none;
-  background: #fff;
-  padding: 1.5rem 1.5rem;
+  -webkit-box-shadow: 1px 1px 10px black;
+          box-shadow: 1px 1px 10px black;
   border-radius: 1rem;
+  background: #fff;
+  padding: 1rem 1rem;
 }
 
 #center-rules-display .rulespage #display-rules-head {
@@ -91,11 +95,44 @@ body {
   margin: 0 auto;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
 }
 
-#center-selection .border {
+#after-selection {
+  display: none;
+  width: 40%;
+  margin: 0 auto;
+  -ms-grid-columns: 1fr 200px 1fr;
+      grid-template-columns: 1fr 200px 1fr;
+}
+
+#after-selection button {
+  cursor: not-allowed;
+}
+
+#after-selection button img {
+  cursor: not-allowed;
+}
+
+#after-selection p {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 23px;
+}
+
+#after-selection #the-house-picked {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#after-selection #computer {
+  padding: 90px;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: rgba(23, 23, 51, 0.842);
+}
+
+.border {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -106,53 +143,62 @@ body {
   padding: 1.5rem;
 }
 
-#center-selection .border .selection {
+.border .selection {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50%;
   background: #fff;
   padding: 3rem;
+  -webkit-box-shadow: 2px 7px inset #c2c2c2;
+          box-shadow: 2px 7px inset #c2c2c2;
 }
 
-#center-selection .border .selection button {
+.border .selection button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-#center-selection #rock-div {
+.border .selection button img {
+  position: relative;
+  cursor: pointer;
+}
+
+#rock-div {
   -ms-grid-row: 2;
   grid-row: 2;
   -ms-grid-column: 2;
   grid-column: 2;
   background: #dd405d;
+  -webkit-box-shadow: 2px 6px #dc2e4e;
+          box-shadow: 2px 6px #dc2e4e;
 }
 
-#center-selection #scissors-div {
+#scissors-div {
   -ms-grid-column: 3;
   grid-column: 3;
   background: #ec9e0e;
+  -webkit-box-shadow: 2px 6px #eca922;
+          box-shadow: 2px 6px #eca922;
 }
 
-#center-selection #paper-div {
+#paper-div {
   background: #4865f4;
+  -webkit-box-shadow: 2px 6px #5671f5;
+          box-shadow: 2px 6px #5671f5;
 }
 
 #footer {
-  border: 1px solid #606e85;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: absolute;
-  right: 10px;
-  border-radius: 0.4rem;
+  text-align: right;
+  padding-bottom: 1px;
 }
 
 #footer #rules {
   padding: 0.5rem 2rem;
+  border-radius: 0.4rem;
+  border: 1px solid #606e85;
   background: none;
-  border: none;
   color: white;
 }
 

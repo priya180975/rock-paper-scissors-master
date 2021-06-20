@@ -37,27 +37,41 @@
     <div id="center-selection">
       <div class="border" id="paper-div">
         <div class="selection">
-          <button id="paper">
-            <img src="images/icon-paper.svg" alt="paper">
+          <button class="paper select" data-no="1">
+            <img src="images/icon-paper.svg" alt="paper" class="paper" data-no="1">
           </button>
         </div> 
       </div>
       <div class="border" id="rock-div">
         <div class="selection">
-          <button id="rock">
-            <img src="images/icon-rock.svg" alt="rock">
+          <button class="rock select" data-no="2">
+            <img src="images/icon-rock.svg" alt="rock" class="rock" data-no="2">
           </button>
         </div> 
       </div>
       <div class="border" id="scissors-div">
         <div class="selection">
-          <button id="scissors">
-            <img src="images/icon-scissors.svg" alt="scissors">
+          <button class="scissors select" data-no="3">
+            <img src="images/icon-scissors.svg" alt="scissors" class="scissors" data-no="3">
           </button>
         </div> 
       </div>
-      <!-- <img src="images/bg-triangle.svg"> -->
     </div>
+
+
+  <!--after selection in center selection-->
+    <div id="after-selection">
+      <div id="you-picked">
+          <p>YOU PICKED</p>
+          <div id="human"></div>
+      </div>
+      <div id="the-house-picked">
+          <p>THE HOUSE PICKED</p>
+          <div id="computer"></div>
+      </div>
+    </div>
+    <!---->
+    
 
     <div id="center-rules-display">
       <div class="rulespage">
@@ -74,6 +88,7 @@
     <div id="footer">
       <button id="rules">RULES</button>
     </div>
+
   </div>
 
   
@@ -81,6 +96,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+
   <script src="script.js"></script>
 </body>
 </html>
