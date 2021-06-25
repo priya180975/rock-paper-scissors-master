@@ -23,10 +23,9 @@ $back:hsl(237, 49%, 15%);
 }
 
 body{
-    //background-image: repeating-radial-gradient(yellow 10%,pink);
     background:radial-gradient(circle at top,$Radial-Gradient1,$Radial-Gradient2,black);
-    height: 100vh;
-    
+    height: 100vh;  
+    overflow:hidden;
 }
 
 #head{
@@ -101,14 +100,24 @@ body{
     width: 40%;
     margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr;
+    
+    // justify-content: center;
 }
 
 #after-selection{
+    // border:1px solid white;
+    top: -40px;
+    position: relative;
+    box-sizing: border-box;
     display: none;
     // display: grid;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     grid-template-columns:1fr 400px 1fr;
+    // align-items: center;
+    justify-items: center;
+    align-items: center;
+    // border: 1px solid black;
 
     button{
         cursor:not-allowed;
@@ -123,11 +132,13 @@ body{
         text-align: center;
         margin-bottom: 2rem;
         font-size: 23px;
-
     }
 
     #the-house-picked{
         grid-column:3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .temporary{
@@ -205,30 +216,6 @@ body{
     }
 }
 
-.circle{
-    border-radius: 50%;
-    background-image:repeating-radial-gradient(circle at 250px,#2b2b3628 ,rgba(48, 48, 78, 0.733) 50px);
-    z-index: -1;
-    position:absolute;
-    top:120px;
-    background-size: 760px;
-    height: 500px;
-    width: 500px;   
-}
-
-.circle-right{
-    
-    right: 136px;
-    //right: 175px;
-}
-
-.circle-left{
-    left:120px
-    //left:130px
-}
-
-
-
 
 #footer{
     position: absolute;
@@ -253,3 +240,12 @@ body{
 
 }
 
+
+.pseudo-1{
+    background-image:repeating-radial-gradient(circle at center,#2b2b3628 ,rgba(48, 48, 78, 0.733) 30px);
+    border-radius: 50%;
+    // background-size: 760px;
+    z-index: -1;
+    //position: absolute;
+    padding: 100px;
+}

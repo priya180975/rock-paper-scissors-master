@@ -72,33 +72,17 @@ function winnertemp(text)
 {
     let scr=(text=="TIE")?0:(text=="YOU LOSE")?-1:1
     score(scr)
-  
-
+    
     if(scr=="1")
     {
-        console.log("hello")
         let human=document.querySelector("#human");
-        let hum=human.innerHTML;
-        // human.classList.add("circle");
-        human.innerHTML=  
-        `<div class="circle circle-left">
-           
-        </div>
-        ${hum}`
-        console.log(human.innerHTML)
+        human.classList.add("pseudo-1");
     }
 
     if(scr==-1)
     {
         let computer=document.querySelector("#computer");
-        let comp=computer.innerHTML;
-        // computer.classList.add("circle");
-        computer.innerHTML=  
-        `<div class="circle circle-right">
-           
-        </div>
-        ${comp}`
-        console.log(comp.innerHTML)
+        computer.classList.toggle("pseudo-1")
     }
 
     let div= 
@@ -107,13 +91,13 @@ function winnertemp(text)
         <button id="play-again">PLAY AGAIN</button>
     </div>`;
 
-
-
     return div
 }
 
 function again()
 {
+    if(document.querySelector(".pseudo-1"))
+    {document.querySelector(".pseudo-1").classList.remove("pseudo-1")}
     document.querySelector(".winner").remove();
     centerSelection.style.display="grid";
     afterSelection.style.display="none";
